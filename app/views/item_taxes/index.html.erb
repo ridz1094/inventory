@@ -1,6 +1,6 @@
 <h3><%= link_to 'Home', '/' %></h3>
 <h1>Item Taxes</h1>
-
+<% if(@item_taxes.size > 0) %>
 <table>
   <thead>
     <tr>
@@ -30,7 +30,9 @@
     <% end %>
   </tbody>
 </table>
-
+<% else %>
+  <h3>No records found</h3>
+<% end %>
 <br>
 
 <%= link_to 'New Item Tax', new_item_tax_path %>

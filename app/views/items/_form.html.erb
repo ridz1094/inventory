@@ -10,7 +10,7 @@
       </ul>
     </div>
   <% end %>
-
+<% if(item_categories.size > 0)  %>
   <div class="actions">
     <p>Name: </p>
     <%= form.text_field :name %>
@@ -24,4 +24,7 @@
     <% end %>
     <%= form.submit %>
   </div>
+  <% else %>
+    <h4>Create item categories to add items</h4>
+  <% end %>
 <% end %>

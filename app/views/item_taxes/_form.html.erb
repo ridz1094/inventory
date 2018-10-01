@@ -10,7 +10,7 @@
       </ul>
     </div>
   <% end %>
-
+<% if(items.size > 0)  %>
   <div class="actions">
     <p>Tax Type: </p>
     <%= form.text_field :tax_type %>
@@ -24,4 +24,7 @@
     <% end %>
     <%= form.submit %>
   </div>
+  <% else %>
+    <h4>Create items to add item taxes</h4>
+  <% end %>
 <% end %>
