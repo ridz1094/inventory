@@ -22,8 +22,8 @@
         <td colspan="2"> <%= item.name %> </td>
         <td colspan="1"> <%= item.rate %> </td>
         <td colspan="2"> <%= item.item_category.name %></td>
-        <td colspan="2"> <%= item.created_at %> </td>
-        <td colspan="2"> <%= item.updated_at %> </td>
+        <td colspan="2"> <%= item.created_at.strftime("%d-%m-%Y") %> </td>
+        <td colspan="2"> <%= item.updated_at.strftime("%d-%m-%Y") %> </td>
         <td colspan="2"><%= link_to 'Show', item %>
           <%= link_to 'Edit', edit_item_path(item) %>
           <%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>

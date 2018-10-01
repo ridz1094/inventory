@@ -21,8 +21,8 @@
         <td colspan="2"> <%= item_tax.tax_type %> </td>
         <td colspan="1"> <%= item_tax.tax %> </td>
         <td colspan="2"> <%= item_tax.item.name %></td>
-        <td colspan="2"> <%= item_tax.created_at %> </td>
-        <td colspan="2"> <%= item_tax.updated_at %> </td>
+        <td colspan="2"> <%= item_tax.created_at.strftime("%d-%m-%Y") %> </td>
+        <td colspan="2"> <%= item_tax.updated_at.strftime("%d-%m-%Y") %> </td>
         <td><%= link_to 'Show', item_tax %>
           <%= link_to 'Edit', edit_item_tax_path(item_tax) %>
           <%= link_to 'Destroy', item_tax, method: :delete, data: { confirm: 'Are you sure?' } %></td>
