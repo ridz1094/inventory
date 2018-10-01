@@ -1,0 +1,6 @@
+<h1>Editing Item</h1>
+<h3><%= link_to 'Home', '/' %></h3>
+<%= render 'form', item: @item, item_categories: @item_categories %>
+
+<%= link_to 'Show', @item %> |
+<%= link_to 'Back', items_path %>

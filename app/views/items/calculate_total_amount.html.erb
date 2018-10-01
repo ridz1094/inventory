@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+<h2><b>Items</b></h2>
+<table>
+  <tr>
+    <th>S No.</th>
+    <th>Name</th>
+    <th>Category</th>
+    <th>Rate</th>
+  </tr>
+  <% @items.each_with_index do |item, index| %>
+    <tr>
+      <td> <%= index+1 %> </td>
+      <td><%= item.name %></td>
+      <td><%= item.item_category.name %></td>
+      <td><%= item.rate %></td>
+    </tr>
+  <% end %>
+</table>
+<p>SubTotal: <%= @total_rate %></p>
+<p>Tax: <%= @total_tax %></p>
+<p>Total Amount: <%= @total_rate + @total_tax %></p>

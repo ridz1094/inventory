@@ -1,0 +1,27 @@
+<%= form_with(model: item_tax, local: true) do |form| %>
+  <% if item_tax.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(item_tax.errors.count, "error") %> prohibited this item_tax from being saved:</h2>
+
+      <ul>
+      <% item_tax.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <p>Tax Type: </p>
+    <%= form.text_field :tax_type %>
+    <p>Tax: </p>
+    <%= form.text_field :tax %>
+    <p>Item: </p>
+    <%= form.select(:item_id) do %>
+      <% items.each do |c| -%>
+        <%= content_tag(:option, c.name, value: c.id) %>
+      <% end %>
+    <% end %>
+    <%= form.submit %>
+  </div>
+<% end %>

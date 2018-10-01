@@ -1,0 +1,26 @@
+<h3><%= link_to 'Home', '/' %></h3>
+<h2><b>Item Category</b></h2>
+<h3><%= @item_category.name %></h3>
+<% if(@item_category.items.size > 0) %>
+<table>
+  <tr>
+    <th></th>
+    <th>S No.</th>
+    <th>Name</th>
+    <th>Rate</th>
+  </tr>
+  <% @item_category.items.each_with_index do |item, index| %>
+  <%= form_tag calculate_total_amount_items_path, method: :post do |form| %>
+    <tr>
+      <td> <%= check_box_tag "items[]", item.id %></td>
+      <td> <%= index+1 %> </td>
+      <td><%= item.name %></td>
+      <td><%= item.rate %></td>
+    </tr>
+    <%= submit_tag "Submit" %>
+<% end %>
+  <% end %>
+</table>
+<% end %>
+<%= link_to 'Edit', edit_item_category_path(@item_category) %> |
+<%= link_to 'Back', item_categories_path %>

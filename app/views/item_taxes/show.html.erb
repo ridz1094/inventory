@@ -1,0 +1,7 @@
+<h3><%= link_to 'Home', '/' %></h3>
+<h2><b>Item Tax</b></h2>
+<p>Tax Type: <%= @item_tax.tax_type %></p>
+<p>Rate: <%= @item_tax.tax %></p>
+<p>Item: <%= @item_tax.item.name %></p>
+<%= link_to 'Edit', edit_item_tax_path(@item_tax) %> |
+<%= link_to 'Back', item_taxes_path %>

@@ -1,0 +1,27 @@
+<%= form_with(model: item, local: true) do |form| %>
+  <% if item.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(item.errors.count, "error") %> prohibited this item from being saved:</h2>
+
+      <ul>
+      <% item.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <p>Name: </p>
+    <%= form.text_field :name %>
+    <p>Rate: </p>
+    <%= form.text_field :rate %>
+    <p>Item Category: </p>
+    <%= form.select(:item_category_id) do %>
+      <% item_categories.each do |c| -%>
+        <%= content_tag(:option, c.name, value: c.id) %>
+      <% end %>
+    <% end %>
+    <%= form.submit %>
+  </div>
+<% end %>
